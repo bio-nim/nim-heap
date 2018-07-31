@@ -45,7 +45,7 @@ proc propFulfilled[T](h: Heap[T], indParent, indChild: int): bool {.inline.} =
   h.comp(h.data[indParent], h.data[indChild]) <= 0
 
 
-template assertHeapProperty[T](h: Heap[T], enabled: expr = true) =
+template assertHeapProperty[T](h: Heap[T], enabled: untyped = true) =
   ## only for debugging: explicit check if the heap property
   ## is fulfilled for all nodes
   when enabled:
